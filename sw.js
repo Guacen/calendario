@@ -1,5 +1,5 @@
 /* Guarda la app para que abra sin internet. Las fotos y comentarios viven en IndexedDB, no aquí. */
-const CACHE = 'adviento-v1';
+const CACHE = 'adviento-v2';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icons/apple-touch-icon.png', './icons/icon-192.png', './icons/icon-512.png', './icons/favicon-32.png'];
 
 self.addEventListener('install', e => {

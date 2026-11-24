@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Adviento de Andrea</title>
-<meta name="description" content="Catorce cajitas, una por día, y la bitácora de cómo te fue.">
+<meta name="description" content="Catorce cajitas para abrir cuando quieras, y la bitácora de cómo te fue.">
 <meta name="theme-color" content="#0c1530">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -19,7 +19,7 @@
 <style>
 /* Layout: una noche nevada continua. Primera vez: sobre de lacre, carta de Papá Noel y etiqueta para raspar.
    Después: la app, con el estado del día arriba, las 14 cajitas como álbum de 2 columnas y la bitácora debajo.
-   Cada cajita abre una hoja de papel desde abajo con el mensaje del día y su registro. */
+   Cada cajita abre una hoja de papel desde abajo con su carta y su registro. Todas se pueden abrir en cualquier orden. */
 :root{
   --night:#0c1530;
   --night-2:#18295a;
@@ -630,9 +630,9 @@ h1 em{font-style:italic;font-weight:400;color:var(--gold)}
     <hr class="rule">
     <div class="lbody">
       <p class="hohoho">¡Jo, jo, jo, <span data-name>Andrea</span>!</p>
-      <p>Ya sé que todavía falta para la Nochebuena, pero este año tuve que adelantarme. El regalo que los elfos prepararon para ti trae catorce sorpresas, una para cada día, y tenía que llegar con tiempo.</p>
-      <p>Revisé la lista dos veces (sí, sigues en la de los que se portaron bien), lo subí al trineo y lo despaché con mis renos más rápidos. Ya va volando hacia tu puerta.</p>
-      <p>Esta vez te dejé algo más: un cuaderno mágico aquí mismo, en tu celular. Cada día abre la cajita que toca, tómale una foto a lo que te salió y cuéntame qué tal te pareció. Al final vas a tener la bitácora completa de tu diciembre.</p>
+      <p>Ya sé que todavía falta para la Nochebuena, pero este año tuve que adelantarme. El regalo que los elfos prepararon para ti trae catorce sorpresas y tenía que llegar con tiempo.</p>
+      <p>Revisé la lista dos veces (sí, sigues en la de los que se portaron bien), lo subí al trineo y lo despaché con mis renos más rápidos. Si no me equivoco, ya debe estar en tus manos.</p>
+      <p>Esta vez te dejé algo más: un cuaderno mágico aquí mismo, en tu celular. Abre las cajitas cuando quieras y en el orden que quieras, tómale una foto a lo que te salga y cuéntame qué tal te pareció. Al final vas a tener la bitácora completa de tus catorce sorpresas.</p>
       <p>Con cariño desde el Polo Norte,<br><span class="sig">Papá Noel</span></p>
       <p class="pd"><b>P.D.</b> Más abajo está la etiqueta del trineo. Ráspala para ver qué viene adentro.</p>
     </div>
@@ -671,7 +671,7 @@ h1 em{font-style:italic;font-weight:400;color:var(--gold)}
     <button class="moon" data-moon aria-label="Tocar la luna"></button>
     <p class="eyebrow">Adviento 2026 · Correo Polar</p>
     <h1>Hola, <em data-name>Andrea</em></h1>
-    <p class="lead">Catorce cajitas, una por día, y la bitácora de cómo te fue.</p>
+    <p class="lead">Catorce cajitas para abrir cuando quieras, y la bitácora de cómo te fue.</p>
   </header>
 
   <p class="test-flag" id="test-flag" hidden></p>
@@ -759,21 +759,6 @@ h1 em{font-style:italic;font-weight:400;color:var(--gold)}
   </div>
 </div>
 
-<!-- ===================== HOJA: FECHA DE INICIO ===================== -->
-<div class="sheet" id="start-sheet" hidden>
-  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="start-title" tabindex="-1">
-    <div class="grab" aria-hidden="true"></div>
-    <div class="pbar">
-      <div><p class="kicker">Correo Polar</p><h2 id="start-title">¡Llegó tu calendario!</h2></div>
-      <button class="x" type="button" data-close aria-label="Cerrar"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
-    </div>
-    <p class="p">Trae 14 cajitas, una por día. Escoge cuándo empiezas y las cajitas se irán desbloqueando solas, una cada día a la medianoche.</p>
-    <div class="choices" id="choices"></div>
-    <p class="p-soft" id="start-note" hidden>Lo que ya registraste se conserva. Solo cambian las fechas de las cajitas.</p>
-    <div class="save-row"><span></span><button class="btn ink" type="button" id="start-ok" disabled>Empezar</button></div>
-  </div>
-</div>
-
 <!-- ===================== HOJA: AJUSTES ===================== -->
 <div class="sheet" id="settings-sheet" hidden>
   <div class="panel" role="dialog" aria-modal="true" aria-labelledby="set-title" tabindex="-1">
@@ -783,7 +768,6 @@ h1 em{font-style:italic;font-weight:400;color:var(--gold)}
       <button class="x" type="button" data-close aria-label="Cerrar"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
     </div>
     <div class="set-list">
-      <div class="set-row"><div><b>Fecha de inicio</b><small id="set-start">Aún no la escoges</small></div><button class="chip" type="button" id="set-start-btn">Cambiar</button></div>
       <div class="set-row"><div><b>Cascabeles</b><small>Suenan al abrir cajitas</small></div><label class="switch"><input type="checkbox" id="set-sound" aria-label="Sonido de cascabeles"><span></span></label></div>
       <div class="set-row"><div><b>Carta de Papá Noel</b><small>Léela otra vez</small></div><button class="chip" type="button" id="set-letter">Abrir</button></div>
     </div>
@@ -817,38 +801,33 @@ const CONFIG = {
   firma: 'Jorge',
   anio: 2026,
   dias: 14,
-  inicios: [
-    { dia: 11, titulo: 'Empiezo el 11 de diciembre', detalle: 'Termino el 24, en Nochebuena' },
-    { dia: 15, titulo: 'Empiezo el 15 de diciembre', detalle: 'Termino el 28 de diciembre' }
-  ],
   guia: '#1675281203283-01',
   producto: 'Calendario de Adviento Wonderland, Edición Luxury',
   ref: 'STN-BAU2846',
 
-  /* Mensajes de Jorge para las fechas clave */
+  /* Todas las cajitas se pueden abrir cuando ella quiera y en cualquier orden.
+     Los mensajes siguen el orden en que las abre: la 1.ª que abra, la 7.ª y la 14.ª
+     traen carta de Jorge; las demás, de Papá Noel. */
+  cartaMitad: 7,
   jorge: {
-    primerDia: 'Andrea, hoy empieza tu cuenta de catorce cajitas. Quise que cada una fuera una excusa para consentirte un poquito todos los días y que, al final, te quedara este diario de cómo te fue. Ábrelas con calma, tómales foto y escribe lo que sientas. Te quiero mucho.',
-    nochebuena: 'Feliz Nochebuena, mi amor. Esta noche pienso en todo lo que nos falta por vivir. Me ilusiona armar una familia contigo, tener hijos y verlos crecer en una casa llena de risas, con tradiciones que inventemos juntos, como estas cajitas. Ojalá algún diciembre les contemos que todo empezó con nosotros dos.',
-    ultimoDia: 'Llegaste a la última cajita. Quiero que sepas lo orgulloso que estoy de ti, de la mujer que eres y de todo lo que estás construyendo. Espero que cumplas cada una de tus metas, una por una. Sé que vas a ser una radióloga excelente, y voy a estar a tu lado para verlo y aplaudirte. Te amo.'
+    primera: 'Andrea, aquí empiezan tus catorce cajitas. Quise que cada una fuera una excusa para consentirte un poquito y que, al final, te quedara este diario de cómo te fue. Ábrelas cuando quieras, tómales foto y escribe lo que sientas. Te quiero mucho.',
+    mitad: 'Mi amor, ya vas por la mitad de tus cajitas, y hoy quiero contarte con qué sueño. Me ilusiona armar una familia contigo, tener hijos y verlos crecer en una casa llena de risas, con tradiciones que inventemos juntos, como estas cajitas. Ojalá algún diciembre les contemos que todo empezó con nosotros dos.',
+    ultima: 'Llegaste a la última cajita. Quiero que sepas lo orgulloso que estoy de ti, de la mujer que eres y de todo lo que estás construyendo. Espero que cumplas cada una de tus metas, una por una. Sé que vas a ser una radióloga excelente, y voy a estar a tu lado para verlo y aplaudirte. Te amo.'
   },
 
-  /* Mensajes de Papá Noel, por fecha de diciembre */
+  /* Mensajes de Papá Noel, según el orden en que abre las cajitas (2.ª, 3.ª, …) */
   papaNoel: {
-    12: 'Segunda cajita. Los elfos apostaron a que no aguantabas hasta hoy para abrirla. Perdieron.',
-    13: 'Hoy toca consentirte sin culpa. Son órdenes directas del Polo Norte.',
-    14: 'Rodolfo te manda saludos. Dice que la nariz le brilla más cuando sonríes.',
-    15: 'Ya va la mitad de diciembre. Pon una canción navideña mientras abres la de hoy.',
-    16: 'Hoy empieza la novena de aguinaldos. Que no falten los buñuelos, la natilla y los villancicos.',
-    17: 'Tómate una foto con lo de hoy. Es para el álbum del Polo Norte y para tu bitácora.',
-    18: 'Toma agua. Hasta Papá Noel se deshidrata de tanto jo, jo, jo.',
-    19: 'La señora Claus revisó tu bitácora y dice que vas muy bien. Ella casi nunca dice eso.',
-    20: 'Si hoy fue un día pesado, esta cajita es para recordarte que alguien pensó en ti.',
-    21: 'Hoy es la noche más larga del año en el Polo Norte. Buen plan para una película y una cobija.',
-    22: 'Los renos ya están entrenando para el gran viaje. Tú descansa, que te lo has ganado.',
-    23: 'Último día de preparativos en el taller. Los elfos están nerviosos; tú, tranquila, que mañana es Nochebuena.',
-    25: '¡Feliz Navidad! Anoche llegué tardísimo, pero no me olvidé de tu cajita.',
-    26: 'Hoy los elfos tienen día libre. Tú también: nada de pendientes.',
-    27: 'Penúltima cajita. Mira tu bitácora desde el principio; te está quedando muy linda.'
+    2: 'Segunda cajita. Los elfos apostaron a cuánto ibas a aguantar antes de abrirla. Ninguno acertó.',
+    3: 'Hoy toca consentirte sin culpa. Son órdenes directas del Polo Norte.',
+    4: 'Rodolfo te manda saludos. Dice que la nariz le brilla más cuando sonríes.',
+    5: 'Tómate una foto con lo que te salió. Es para el álbum del Polo Norte y para tu bitácora.',
+    6: 'Pon una canción navideña mientras abres esta. Los elfos recomiendan algo con cascabeles.',
+    8: 'Toma agua. Hasta Papá Noel se deshidrata de tanto jo, jo, jo.',
+    9: 'La señora Claus revisó tu bitácora y dice que vas muy bien. Ella casi nunca dice eso.',
+    10: 'Si hoy fue un día pesado, esta cajita es para recordarte que alguien pensó en ti.',
+    11: 'Los renos ya están entrenando para el gran viaje. Tú descansa, que te lo has ganado.',
+    12: 'Un buen plan para esta noche sería una película, una cobija y lo que te acaba de salir.',
+    13: 'Penúltima cajita. Mira tu bitácora desde el principio; te está quedando muy linda.'
   },
   papaNoelGenerico: 'Otra cajita, otra sorpresa. Los elfos quieren saber qué te salió.'
 };
@@ -858,7 +837,6 @@ const CONFIG = {
 const N = CONFIG.dias;
 const Q = new URLSearchParams(location.search);
 const PRUEBA = Q.has('prueba');
-const HOY_SIM = PRUEBA && /^\d{4}-\d{2}-\d{2}$/.test(Q.get('hoy') || '') ? Q.get('hoy') : null;
 const root = document.documentElement;
 const reduce = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
 const $ = s => document.querySelector(s);
@@ -946,34 +924,31 @@ async function saveEntry(i, quiet){
 }
 
 /* =====================================================================
-   Fechas
+   Fechas (cada cajita guarda el día en que se abrió)
    ===================================================================== */
-const DAY = 864e5;
 const fmtLong = new Intl.DateTimeFormat('es-CO', { weekday: 'long', day: 'numeric', month: 'long' });
 const fmtDM = new Intl.DateTimeFormat('es-CO', { day: 'numeric', month: 'long' });
-function today(){
-  if (HOY_SIM){ const p = HOY_SIM.split('-').map(Number); return new Date(p[0], p[1] - 1, p[2]); }
-  const n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate());
-}
-const startDate = () => new Date(CONFIG.anio, 11, S.start);
-const dateOf = i => new Date(CONFIG.anio, 11, S.start + i - 1);
-function dayNow(){ if (!S.start) return null; return Math.round((today() - startDate()) / DAY) + 1; }
-function canOpen(i){ if (!S.start) return false; if (PRUEBA && !HOY_SIM) return true; return dayNow() >= i; }
+const MES = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
 const longDate = d => cap(fmtLong.format(d));
+const shortDate = d => d.getDate() + ' ' + MES[d.getMonth()];
 
 /* =====================================================================
    Mensajes del día
    ===================================================================== */
+/* Orden en que se abrió la cajita (1 = la primera que abrió) */
+function seqOf(i){
+  const e = E.get(i); if (!e || !e.openedAt) return 0;
+  if (e.seq) return e.seq;
+  const list = []; E.forEach((x, k) => { if (x && x.openedAt) list.push([k, x.openedAt]); });
+  list.sort((a, b) => a[1] - b[1] || a[0] - b[0]);
+  return list.findIndex(p => p[0] === i) + 1;
+}
 function messageFor(i){
-  const d = dateOf(i).getDate(), last = i === N, J = CONFIG.jorge, f = CONFIG.firma;
-  if (i === 1) return [{ who: 'jorge', pre: `Hoy no escribo yo. Le presté la pluma a ${f}.`, text: J.primerDia }];
-  if (d === 24 && last) return [
-    { who: 'jorge', pre: `Esta noche estoy repartiendo regalos por todo el mundo y además es tu última cajita, así que ${f} te dejó dos cartas.`, text: J.nochebuena },
-    { who: 'jorge', text: J.ultimoDia }
-  ];
-  if (d === 24) return [{ who: 'jorge', pre: `Esta noche estoy repartiendo regalos por todo el mundo, así que hoy escribe ${f}.`, text: J.nochebuena }];
-  if (last) return [{ who: 'jorge', pre: d === 28 ? `Hoy es Día de los Inocentes, pero esta carta va muy en serio. La escribe ${f}.` : `La última cajita la escribe ${f}.`, text: J.ultimoDia }];
-  return [{ who: 'santa', text: CONFIG.papaNoel[d] || CONFIG.papaNoelGenerico }];
+  const s = seqOf(i), J = CONFIG.jorge, f = CONFIG.firma;
+  if (s === 1) return [{ who: 'jorge', pre: `No escribo yo esta primera carta. Le presté la pluma a ${f}.`, text: J.primera }];
+  if (s === CONFIG.cartaMitad) return [{ who: 'jorge', pre: `Vas por la mitad, así que le presté la pluma otra vez a ${f}.`, text: J.mitad }];
+  if (s === N) return [{ who: 'jorge', pre: `Es tu última cajita, y esta carta la escribe ${f}.`, text: J.ultima }];
+  return [{ who: 'santa', text: CONFIG.papaNoel[s] || CONFIG.papaNoelGenerico }];
 }
 const sigOf = m => m.who === 'jorge' ? CONFIG.firma : 'Papá Noel';
 
@@ -1207,91 +1182,45 @@ function showHome(){ lv.hidden = true; home.hidden = false; renderHome(); window
 function renderHome(){
   renderInstall();
   const tf = $('#test-flag');
-  if (PRUEBA){ tf.hidden = false; tf.textContent = HOY_SIM ? `Modo prueba: simulando que hoy es ${longDate(today()).toLowerCase()}. Nada de esto se mezcla con la bitácora real.` : 'Modo prueba: todas las cajitas están abiertas y nada de esto se mezcla con la bitácora real.'; }
+  if (PRUEBA){ tf.hidden = false; tf.textContent = 'Modo prueba: nada de lo que hagas aquí se mezcla con la bitácora real.'; }
   renderStatus(); renderGrid(); renderSummary();
 }
 const registered = () => { let n = 0; for (let i = 1; i <= N; i++) if (hasData(E.get(i))) n++; return n; };
 
-/* ---------- Estado del día ---------- */
-const ROUTE = 'M30 120 C 140 10, 430 0, 570 112';
-const STEPS = ['Despegando del Polo Norte', 'Cruzando el Círculo Polar Ártico', 'Sobre Groenlandia. Hace frío hasta para los renos', 'Atravesando el Atlántico con viento a favor', 'Rodolfo pidió una pausa para comerse una zanahoria', 'Esquivando nubes sobre el mar Caribe', 'Ya se ven las montañas a lo lejos'];
-const TRACK_FINAL = '<b>Última ubicación:</b> en camino a tu puerta. Cuando llegue, toca “¡Ya llegó!”.';
-let trackBusy = false;
-function progressHTML(d){
+/* ---------- Estado ---------- */
+const openedCount = () => { let n = 0; E.forEach(e => { if (e && e.openedAt) n++; }); return n; };
+function nextClosed(){ for (let i = 1; i <= N; i++){ const e = E.get(i); if (!e || !e.openedAt) return i; } return 0; }
+function firstPending(){ for (let i = 1; i <= N; i++){ const e = E.get(i); if (e && e.openedAt && !hasData(e)) return i; } return 0; }
+function progressHTML(){
   let h = '<div class="progress" aria-hidden="true">';
-  for (let i = 1; i <= N; i++){ const e = E.get(i); h += '<span class="seg' + (hasData(e) ? ' done' : (e && e.openedAt) ? ' open' : canOpen(i) ? ' avail' : '') + '"></span>'; }
-  return h + '</div><p class="legend"><span><i style="background:var(--gold)"></i>En tu bitácora</span><span><i style="background:var(--red)"></i>Abierta o lista</span></p>';
+  for (let i = 1; i <= N; i++){ const e = E.get(i); h += '<span class="seg' + (hasData(e) ? ' done' : (e && e.openedAt) ? ' open' : '') + '"></span>'; }
+  return h + '</div><p class="legend"><span><i style="background:var(--gold)"></i>En tu bitácora</span><span><i style="background:var(--red)"></i>Abierta, sin registrar</span></p>';
 }
 function renderStatus(){
-  const st = $('#status'), d = dayNow();
-  if (!S.start){
+  const st = $('#status'), opened = openedCount(), nxt = nextClosed(), pend = firstPending(), reg = registered(), sin = opened - reg;
+  const pendBtn = pend ? '<button class="btn ghost" type="button" data-open="' + pend + '">Completar la cajita ' + pend + '</button>' : '';
+  if (!opened){
     st.innerHTML =
-      '<div class="st-head"><span class="live">En camino</span><span class="mono">Guía ' + CONFIG.guia + '</span></div>' +
-      '<h2>Tu calendario va en camino</h2>' +
-      '<svg class="route" viewBox="0 0 600 150" aria-hidden="true">' +
-        '<path id="route" d="' + ROUTE + '" fill="none" stroke-width="2" stroke-dasharray="5 9" stroke-linecap="round"/>' +
-        '<path id="route-done" d="' + ROUTE + '" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0 2000"/>' +
-        '<path d="M30 104 l4 11 l12 0 l-10 7 l4 12 l-10 -7 l-10 7 l4 -12 l-10 -7 l12 0 z" fill="var(--gold)"/>' +
-        '<g fill="var(--snow)"><path d="M556 114 l14 -12 l14 12 v18 h-28 z"/><rect x="566" y="120" width="8" height="12" fill="var(--night)"/></g>' +
-        '<g id="sled"><g transform="translate(-16 -12)"><path d="M1 22 h24 q5 0 7 -4" fill="none" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round"/><circle cx="10" cy="8" r="5" fill="var(--gold)"/><circle cx="18" cy="7" r="3.2" fill="var(--paper)"/><path d="M15 6 l4 -6 l3 6 z" fill="var(--red)"/><path d="M3 18 q-3 -9 3 -10 l1 4 h14 q4 0 6 -5 l3 1 q-1 10 -9 10 z" fill="var(--red)"/></g></g>' +
-      '</svg>' +
-      '<div class="route-ends"><span>Polo Norte</span><span>Tu casa</span></div>' +
-      '<p class="st-line" id="track-line">' + TRACK_FINAL + '</p>' +
-      '<div class="row"><button class="btn" type="button" id="arrived">¡Ya llegó!</button><button class="btn ghost" type="button" id="track">Rastrear el trineo</button></div>';
-    placeSled(.8);
-    $('#arrived').onclick = () => { jingle('small'); openStart(false); };
-    $('#track').onclick = track;
-    return;
-  }
-  const end = dateOf(N);
-  if (d < 1){
-    const left = 1 - d;
+      '<p class="kicker">Tu calendario llegó</p>' +
+      '<h2>' + N + ' cajitas te esperan</h2>' +
+      '<p class="st-soft">Ábrelas cuando quieras y en el orden que quieras. Cada una trae una carta y su espacio en tu bitácora.</p>' +
+      '<div class="row"><button class="btn" type="button" data-open="1">Abrir la cajita 1</button></div>';
+  } else if (nxt){
     st.innerHTML =
-      '<p class="kicker">Empiezas el ' + fmtLong.format(startDate()) + '</p>' +
-      '<div class="cd"><span class="big-num">' + left + '</span><span class="cd-txt">' + (left === 1 ? 'día' : 'días') + ' para tu primera cajita</span></div>' +
-      '<p class="st-soft">Terminas el ' + fmtLong.format(end) + '. Cada cajita se desbloquea a la medianoche de su día.</p>' +
-      '<div class="row"><button class="link-btn" type="button" data-change-start>Cambiar fecha de inicio</button></div>';
-  } else if (d <= N){
-    const e = E.get(d), done = hasData(e);
-    let pend = 0; for (let i = 1; i < d; i++) if (!hasData(E.get(i))) pend++;
-    st.innerHTML =
-      '<p class="kicker">Hoy · ' + fmtLong.format(today()) + '</p>' +
-      '<h2>Cajita ' + d + ' de ' + N + '</h2>' +
-      '<p class="st-soft">' + (done ? 'La de hoy ya está en tu bitácora.' : (e && e.openedAt) ? 'Ya la abriste. Falta tu foto y tu comentario.' : 'Te está esperando.') +
-        (pend ? ' Tienes ' + pend + (pend === 1 ? ' cajita anterior' : ' cajitas anteriores') + ' sin registrar.' : '') + '</p>' +
-      progressHTML(d) +
-      '<div class="row"><button class="btn" type="button" data-open="' + d + '">' + (done ? 'Ver la cajita de hoy' : (e && e.openedAt) ? 'Completar la de hoy' : 'Abrir la cajita de hoy') + '</button></div>';
+      '<p class="kicker">Tu calendario</p>' +
+      '<h2>Llevas ' + opened + ' de ' + N + ' cajitas</h2>' +
+      '<p class="st-soft">' + (sin <= 0 ? 'Todas las que abriste ya están en tu bitácora.' : sin === 1 ? 'Tienes 1 cajita abierta sin registrar.' : 'Tienes ' + sin + ' cajitas abiertas sin registrar.') + '</p>' +
+      progressHTML() +
+      '<div class="row"><button class="btn" type="button" data-open="' + nxt + '">Abrir la cajita ' + nxt + '</button>' + pendBtn + '</div>';
   } else {
-    const n = registered();
     st.innerHTML =
-      '<p class="kicker">Calendario terminado</p>' +
-      '<h2>Tu diciembre en ' + N + ' cajitas</h2>' +
-      '<p class="st-soft">Registraste ' + n + ' de ' + N + '. Guarda tu bitácora con fotos y compártela.</p>' +
-      progressHTML(d) +
+      '<p class="kicker">Calendario completo</p>' +
+      '<h2>Abriste las ' + N + ' cajitas</h2>' +
+      '<p class="st-soft">Registraste ' + reg + ' de ' + N + '. Guarda tu bitácora con fotos y compártela.</p>' +
+      progressHTML() +
+      (pendBtn ? '<div class="row">' + pendBtn + '</div>' : '') +
       '<div class="export"><button class="btn" type="button" data-export>' + (prepared ? 'Compartir bitácora' : 'Preparar bitácora') + '</button><p class="small" data-export-msg></p></div>';
   }
-}
-function placeSled(t){
-  const route = $('#route'), done = $('#route-done'), sled = $('#sled'); if (!route || !sled) return;
-  let L, p, q;
-  try { L = route.getTotalLength(); p = route.getPointAtLength(L * t); q = route.getPointAtLength(Math.min(L, L * t + 2)); } catch(e){ return; }
-  const ang = Math.atan2(q.y - p.y, q.x - p.x) * 180 / Math.PI;
-  sled.setAttribute('transform', 'translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1) + ') rotate(' + ang.toFixed(1) + ')');
-  done.setAttribute('stroke-dasharray', (L * t).toFixed(1) + ' ' + Math.ceil(L + 10));
-}
-function track(){
-  if (trackBusy) return;
-  const line = $('#track-line'), btn = $('#track'); if (!line) return;
-  trackBusy = true; btn.disabled = true; jingle('small');
-  const T = reduce ? 1 : 3600, t0 = performance.now(); let shown = -1;
-  (function step(now){
-    const k = Math.min(1, (now - t0) / T), e = 1 - Math.pow(1 - k, 3);
-    placeSled(e * .8);
-    const idx = Math.min(STEPS.length - 1, Math.floor(k * STEPS.length));
-    if (idx !== shown && k < 1){ shown = idx; line.innerHTML = '<b>Ahora:</b> ' + STEPS[idx] + '…'; }
-    if (k < 1) requestAnimationFrame(step);
-    else { line.innerHTML = TRACK_FINAL; trackBusy = false; btn.disabled = false; }
-  })(t0);
 }
 
 /* ---------- Cajitas ---------- */
@@ -1307,46 +1236,38 @@ function heartsMini(r){
   return s;
 }
 function renderGrid(){
-  const g = $('#grid'), out = document.createDocumentFragment(), d = dayNow();
+  const g = $('#grid'), out = document.createDocumentFragment(), nxt = nextClosed();
   for (let i = 1; i <= N; i++){
-    const e = E.get(i), date = S.start ? dateOf(i) : null, open = canOpen(i), opened = !!(e && e.openedAt);
+    const e = E.get(i), opened = !!(e && e.openedAt);
     const b = el('button', 'tile'); b.type = 'button'; b.dataset.i = i;
-    const dTxt = date ? date.getDate() + ' dic' : 'Cajita';
-    const where = 'Cajita ' + i + (date ? ', ' + fmtLong.format(date) : '');
     if (opened){
+      const when = new Date(e.openedAt);
       b.classList.add('done');
       if (e.photo){ const img = el('img', 't-img'); img.alt = ''; img.src = photoURL(i, e.photo); b.append(img); b.classList.add('has-photo'); }
       else { b.classList.add('no-photo'); const ph = el('span', 't-empty'); ph.append(frag(ICON.cam), el('span', null, 'Agrega tu foto')); b.append(ph); }
-      b.append(el('span', 't-date', dTxt));
+      b.append(el('span', 't-date', shortDate(when)));
       const badges = el('span', 't-badges');
       if (e.fav){ const bd = el('span', 'badge fav'); bd.append(frag(ICON.star)); badges.append(bd); }
       if (e.tried){ const bd = el('span', 'badge tried'); bd.append(frag(ICON.check)); badges.append(bd); }
       b.append(badges);
       const foot = el('span', 't-foot'); foot.append(el('span', 't-name', e.name || 'Cajita ' + i)); if (e.rating) foot.append(heartsMini(e.rating)); b.append(foot);
-      b.setAttribute('aria-label', where + ': ' + (e.name || 'sin nombre') + (e.rating ? ', ' + e.rating + ' de 5' : '') + (e.fav ? ', favorita' : '') + (e.tried ? ', ya la probaste' : ''));
+      b.setAttribute('aria-label', 'Cajita ' + i + ', abierta el ' + fmtDM.format(when) + ': ' + (e.name || 'sin nombre') + (e.rating ? ', ' + e.rating + ' de 5' : '') + (e.fav ? ', favorita' : '') + (e.tried ? ', ya la probaste' : ''));
     } else {
-      b.classList.add('box', open ? 'ready' : 'locked');
-      b.append(el('span', 't-date', dTxt), el('span', 'ribbon'), el('span', 't-tag', String(i)));
-      if (open) b.append(el('span', 't-cta', S.start && d === i ? 'Hoy · Ábreme' : 'Ábreme')); else b.append(frag(ICON.lock));
-      b.setAttribute('aria-label', where + (open ? ', lista para abrir' : ', bloqueada'));
+      b.classList.add('box'); if (i === nxt) b.classList.add('ready');
+      b.append(el('span', 't-date', 'Cajita'), el('span', 'ribbon'), el('span', 't-tag', String(i)));
+      if (i === nxt) b.append(el('span', 't-cta', 'Ábreme'));
+      b.setAttribute('aria-label', 'Cajita ' + i + ', sin abrir');
     }
     out.append(b);
   }
   g.replaceChildren(out);
   $('#boxes-count').textContent = registered() + ' de ' + N + ' en tu bitácora';
 }
-const ELF = ['Los elfos están mirando.', 'Papá Noel lo anotó en su libreta.', 'Rodolfo vio eso.', 'Intento de espionaje registrado en el Polo Norte.', 'La paciencia también cuenta para la lista de los buenos.'];
-function nudge(tile){ if (!tile) return; tile.classList.remove('nope'); void tile.offsetWidth; tile.classList.add('nope'); }
 function tryOpen(i, tile){
-  if (!S.start){ nudge(tile); jingle('nope'); say('Primero cuéntame cuándo llegó tu calendario: toca “¡Ya llegó!”.'); return; }
-  if (!canOpen(i)){
-    nudge(tile); jingle('nope'); S.peeks = (S.peeks || 0) + 1; saveS();
-    const line = S.peeks >= 6 ? 'Van ' + S.peeks + ' intentos. La señora Claus pide calma.' : ELF[(S.peeks - 1) % ELF.length];
-    say('La cajita ' + i + ' se abre el ' + fmtDM.format(dateOf(i)) + '. ' + line); return;
-  }
   let e = E.get(i); const first = !e || !e.openedAt;
   if (!e){ e = blank(); E.set(i, e); }
   if (first){
+    e.seq = openedCount() + 1;
     e.openedAt = Date.now(); saveEntry(i, true); jingle('open');
     if (tile){ const c = centerOf(tile); burst(c[0], c[1], 70); tile.classList.add('popping'); }
     setTimeout(() => showDay(i), reduce || !tile ? 0 : 560);
@@ -1356,7 +1277,6 @@ $('#grid').addEventListener('click', e => { const t = e.target.closest('.tile');
 $('#grid').addEventListener('animationend', e => { if (e.target.classList) e.target.classList.remove('nope'); });
 document.addEventListener('click', e => {
   const o = e.target.closest('[data-open]'); if (o){ const i = +o.dataset.open; tryOpen(i, $('.tile[data-i="' + i + '"]')); return; }
-  if (e.target.closest('[data-change-start]')) openStart(true);
 });
 
 /* ---------- Bitácora (resumen) ---------- */
@@ -1433,7 +1353,7 @@ function renderPhoto(e){
 function showDay(i){
   cur = i; const e = E.get(i);
   $('#day-kicker').textContent = 'Cajita ' + i + ' de ' + N;
-  $('#day-title').textContent = longDate(dateOf(i));
+  $('#day-title').textContent = 'Abierta el ' + fmtLong.format(new Date(e.openedAt));
   const box = $('#day-msgs'); box.replaceChildren();
   messageFor(i).forEach(m => {
     const card = el('article', 'msg ' + (m.who === 'jorge' ? 'msg-j' : 'msg-s'));
@@ -1489,37 +1409,11 @@ $('#photo-del').addEventListener('click', () => {
   const e = E.get(cur); e.photo = null; saveEntry(cur); renderPhoto(e);
 });
 
-/* ---------- Hoja de fecha de inicio ---------- */
-(function buildChoices(){
-  const box = $('#choices');
-  CONFIG.inicios.forEach(o => {
-    const l = el('label', 'choice'), r = el('input'); r.type = 'radio'; r.name = 'start'; r.value = o.dia; r.id = 'start-' + o.dia;
-    const sp = el('span'); sp.append(el('b', null, o.titulo), el('small', null, o.detalle)); l.append(r, sp); box.append(l);
-  });
-  box.addEventListener('change', () => { $('#start-ok').disabled = false; });
-})();
-function openStart(changing){
-  $('#start-title').textContent = changing ? 'Fecha de inicio' : '¡Llegó tu calendario!';
-  $$('#choices input').forEach(r => { r.checked = S.start === +r.value; });
-  $('#start-ok').disabled = !S.start; $('#start-ok').textContent = changing ? 'Guardar' : 'Empezar';
-  let any = false; E.forEach(e => { if (e.openedAt) any = true; }); $('#start-note').hidden = !any;
-  openSheet('#start-sheet');
-}
-$('#start-ok').addEventListener('click', () => {
-  const r = $('#choices input:checked'); if (!r) return;
-  const first = !S.start; S.start = +r.value; saveS(); invalidateExport();
-  closeSheet(); jingle('reveal');
-  burst(window.innerWidth / 2, window.innerHeight * .35, first ? 120 : 40);
-  say('Listo: tus cajitas van del ' + S.start + ' al ' + dateOf(N).getDate() + ' de diciembre.');
-});
-
 /* ---------- Hoja de ajustes ---------- */
 $('#open-settings').addEventListener('click', () => {
-  $('#set-start').textContent = S.start ? 'Del ' + S.start + ' al ' + dateOf(N).getDate() + ' de diciembre' : 'Aún no la escoges';
   $('#set-sound').checked = !!S.sound; $('#imp-msg').textContent = ''; $('#imp-confirm').hidden = true;
   openSheet('#settings-sheet');
 });
-$('#set-start-btn').addEventListener('click', () => openStart(true));
 $('#set-sound').addEventListener('change', () => { S.sound = $('#set-sound').checked; saveS(); if (S.sound) jingle('small'); });
 $('#set-letter').addEventListener('click', () => { closeSheet(); showLetter(); });
 
@@ -1535,13 +1429,13 @@ async function buildExport(){
   const entradas = [], fotos = {};
   for (let i = 1; i <= N; i++){
     const e = E.get(i); if (!e || (!hasData(e) && !e.openedAt)) continue;
-    const msgs = S.start ? messageFor(i) : [];
+    const msgs = e.openedAt ? messageFor(i) : [];
     if (e.photo) fotos[i] = await blobToDataURL(e.photo);
-    entradas.push({ dia: i, fecha: S.start ? isoOf(dateOf(i)) : null, nombre: e.name || '', comentario: e.comment || '', calificacion: e.rating || 0, probado: !!e.tried, favorito: !!e.fav, abierto: e.openedAt || null, foto: !!e.photo, mensaje: msgs.map(m => m.text + ' (' + sigOf(m) + ')').join('\n\n') });
+    entradas.push({ dia: i, orden: seqOf(i) || null, fecha: e.openedAt ? isoOf(new Date(e.openedAt)) : null, nombre: e.name || '', comentario: e.comment || '', calificacion: e.rating || 0, probado: !!e.tried, favorito: !!e.fav, abierto: e.openedAt || null, foto: !!e.photo, mensaje: msgs.map(m => m.text + ' (' + sigOf(m) + ')').join('\n\n') });
   }
-  const data = { app: 'adviento-andrea', version: 1, para: CONFIG.nombre, anio: CONFIG.anio, inicio: S.start, exportado: new Date().toISOString(), entradas };
+  const data = { app: 'adviento-andrea', version: 2, para: CONFIG.nombre, anio: CONFIG.anio, exportado: new Date().toISOString(), entradas };
   const html = exportDoc(data, fotos);
-  const name = 'bitacora-' + CONFIG.nombre.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '') + '-diciembre-' + CONFIG.anio + '.html';
+  const name = 'bitacora-' + CONFIG.nombre.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '') + '-adviento-' + CONFIG.anio + '.html';
   return { file: new File([html], name, { type: 'text/html' }), count: entradas.length };
 }
 function exportDoc(data, fotos){
@@ -1549,6 +1443,9 @@ function exportDoc(data, fotos){
   const hearts = r => '<span class="hearts" aria-label="' + r + ' de 5">' + Array.from({ length: 5 }, (_, k) => '<span class="' + (k < r ? 'on' : 'off') + '">' + H + '</span>').join('') + '</span>';
   const fdate = iso => { if (!iso) return ''; const p = iso.split('-').map(Number); return longDate(new Date(p[0], p[1] - 1, p[2])); };
   const E2 = data.entradas, rated = E2.filter(e => e.calificacion > 0);
+  const fdm = iso => { const p = iso.split('-').map(Number); return fmtDM.format(new Date(p[0], p[1] - 1, p[2])); };
+  const fechas = E2.map(e => e.fecha).filter(Boolean).sort();
+  const rango = !fechas.length ? '' : fechas[0] === fechas[fechas.length - 1] ? 'Abiertas el ' + fdm(fechas[0]) + ' de ' + data.anio + '. ' : 'Abiertas entre el ' + fdm(fechas[0]) + ' y el ' + fdm(fechas[fechas.length - 1]) + ' de ' + data.anio + '. ';
   const avg = rated.length ? (rated.reduce((s, e) => s + e.calificacion, 0) / rated.length).toFixed(1).replace('.', ',') : '–';
   const favs = E2.filter(e => e.favorito);
   const top = rated.slice().sort((a, b) => b.calificacion - a.calificacion || (b.favorito - a.favorito) || a.dia - b.dia).slice(0, 5);
@@ -1564,7 +1461,7 @@ function exportDoc(data, fotos){
   const json = JSON.stringify(data).replace(/</g, '\\u003c');
   const when = new Date(data.exportado);
   return '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
-    '<title>Bitácora de ' + esc(data.para) + ' · Diciembre ' + data.anio + '</title>' +
+    '<title>Bitácora de ' + esc(data.para) + ' · Adviento ' + data.anio + '</title>' +
     '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Karla:wght@400;700&display=swap">' +
     '<style>:root{--paper:#fbf8f2;--card:#fffdf8;--ink:#2b2433;--soft:#6a6273;--rule:#ddd5c8;--red:#b3222b;--gold:#a87a2c;--plum:#5a1d2c}' +
     '*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Karla,system-ui,-apple-system,sans-serif}' +
@@ -1592,7 +1489,7 @@ function exportDoc(data, fotos){
     '@media (max-width:480px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}</style></head><body>' +
     '<div class="stripe"></div><div class="wrap"><header><p class="k">Adviento ' + data.anio + ' · Correo Polar</p>' +
     '<h1>La bitácora de <em>' + esc(data.para) + '</em></h1>' +
-    '<p class="lead">' + (data.inicio ? 'Del ' + data.inicio + ' al ' + (data.inicio + N - 1) + ' de diciembre de ' + data.anio + '. ' : '') + 'Catorce cajitas, una por día.</p></header>' +
+    '<p class="lead">' + rango + 'Catorce cajitas, una carta en cada una.</p></header>' +
     '<div class="stats"><div><b>' + E2.filter(e => e.nombre || e.foto || e.comentario || e.calificacion || e.probado || e.favorito).length + '/' + N + '</b><span>Registradas</span></div><div><b>' + E2.filter(e => e.probado).length + '</b><span>Probadas</span></div><div><b>' + favs.length + '</b><span>Favoritas</span></div><div><b>' + avg + '</b><span>Promedio</span></div></div>' +
     (top.length ? '<h3>Su ranking</h3><ol class="top">' + top.map(e => '<li>' + esc(e.nombre || 'Cajita ' + e.dia) + ' · ' + e.calificacion + '/5' + (e.favorito ? ' ★' : '') + '</li>').join('') + '</ol>' : '') +
     (favs.length ? '<h3>Favoritas</h3><p>' + favs.map(e => esc(e.nombre || 'Cajita ' + e.dia)).join(' · ') + '</p>' : '') +
@@ -1655,10 +1552,9 @@ $('#imp-yes').addEventListener('click', async () => {
     for (const x of data.entradas){
       const i = +x.dia; if (!(i >= 1 && i <= N)) continue;
       let photo = null; if (x.foto && fotos[i]){ try { photo = await (await fetch(fotos[i])).blob(); } catch(e){ photo = null; } }
-      const e = { name: x.nombre || '', comment: x.comentario || '', rating: +x.calificacion || 0, tried: !!x.probado, fav: !!x.favorito, photo, openedAt: x.abierto || Date.now(), updatedAt: Date.now() };
+      const e = { name: x.nombre || '', comment: x.comentario || '', rating: +x.calificacion || 0, tried: !!x.probado, fav: !!x.favorito, photo, openedAt: x.abierto || Date.now(), seq: +x.orden || null, updatedAt: Date.now() };
       E.set(i, e); await dbPut('entries', i, e);
     }
-    if (data.inicio) S.start = +data.inicio;
     S.letter = true; S.envOpened = true; S.revealed = true; await saveS(); invalidateExport();
     msg.textContent = 'Bitácora restaurada: ' + E.size + (E.size === 1 ? ' cajita.' : ' cajitas.');
     renderHome();
@@ -1668,10 +1564,6 @@ $('#imp-yes').addEventListener('click', async () => {
 /* =====================================================================
    Arranque
    ===================================================================== */
-function scheduleMidnight(){
-  const n = new Date(), next = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 1, 0, 0, 5);
-  setTimeout(() => { if (!home.hidden && !openSheetEl) renderHome(); scheduleMidnight(); }, next - n);
-}
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && !home.hidden && !openSheetEl) renderHome(); });
 
 async function init(){
@@ -1681,7 +1573,6 @@ async function init(){
   if (S.letter) showHome(); else showLetter();
   document.body.classList.remove('booting');
   if (memOnly) say('Este navegador no deja guardar datos. Abre la app desde Safari o desde el ícono de inicio.');
-  scheduleMidnight();
 }
 init();
 
